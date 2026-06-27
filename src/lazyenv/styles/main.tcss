@@ -1,0 +1,253 @@
+/* lazyenv — main stylesheet */
+
+$primary: #7c3aed;       /* violet-600 */
+$primary-dark: #5b21b6;  /* violet-700 */
+$accent: #10b981;        /* emerald-500 */
+$danger: #ef4444;        /* red-500 */
+$warning: #f59e0b;       /* amber-500 */
+$muted: #6b7280;         /* gray-500 */
+$surface: #1e1e2e;       /* catppuccin base */
+$overlay: #313244;       /* catppuccin overlay */
+$text: #cdd6f4;          /* catppuccin text */
+
+Screen {
+    background: $surface;
+    color: $text;
+}
+
+Header {
+    background: $primary-dark;
+    color: white;
+    text-style: bold;
+}
+
+Footer {
+    background: $overlay;
+    color: $muted;
+}
+
+#main {
+    height: 1fr;
+}
+
+/* ── File list sidebar ──────────────────────────────────── */
+
+FileList {
+    width: 30;
+    min-width: 20;
+    max-width: 50;
+    border-right: solid $primary-dark;
+    background: $overlay;
+}
+
+FileList > .header {
+    background: $primary-dark;
+    color: white;
+    padding: 0 1;
+    text-style: bold;
+    height: 1;
+}
+
+FileList ListView {
+    background: $overlay;
+    border: none;
+    padding: 0;
+}
+
+FileList ListItem {
+    padding: 0 1;
+    height: 1;
+    color: $text;
+}
+
+FileList ListItem:hover {
+    background: $primary 30%;
+}
+
+FileList ListItem.--highlight {
+    background: $primary;
+    color: white;
+    text-style: bold;
+}
+
+FileList .file-item--example {
+    color: $muted;
+}
+
+FileList .file-item--has-issues {
+    color: $warning;
+}
+
+FileList .file-item--ok {
+    color: $accent;
+}
+
+/* ── Content area ───────────────────────────────────────── */
+
+#content-area {
+    width: 1fr;
+}
+
+/* ── Env detail ─────────────────────────────────────────── */
+
+EnvDetail {
+    height: 1fr;
+    padding: 0;
+}
+
+EnvDetail .search-bar {
+    height: 1;
+    background: $overlay;
+    border-bottom: solid $primary-dark;
+    padding: 0 1;
+}
+
+EnvDetail .entry-list {
+    height: 1fr;
+}
+
+EnvDetail .entry-row {
+    height: 1;
+    padding: 0 1;
+    layout: horizontal;
+}
+
+EnvDetail .entry-row--selected {
+    background: $primary 40%;
+}
+
+EnvDetail .entry-key {
+    width: 30;
+    color: #93c5fd;   /* blue-300 */
+    text-style: bold;
+}
+
+EnvDetail .entry-value {
+    width: 1fr;
+    color: $text;
+}
+
+EnvDetail .entry-value--empty {
+    color: $muted;
+    text-style: italic;
+}
+
+EnvDetail .entry-value--masked {
+    color: $muted;
+}
+
+EnvDetail .comment-line {
+    color: $muted;
+    text-style: italic;
+    padding: 0 1;
+}
+
+EnvDetail .blank-line {
+    height: 1;
+}
+
+/* ── Diff view ──────────────────────────────────────────── */
+
+DiffView {
+    height: 1fr;
+}
+
+DiffView .diff-header {
+    height: 1;
+    layout: horizontal;
+    background: $overlay;
+    border-bottom: solid $primary-dark;
+}
+
+DiffView .diff-header-left {
+    width: 1fr;
+    color: #93c5fd;
+    padding: 0 1;
+    text-style: bold;
+}
+
+DiffView .diff-header-right {
+    width: 1fr;
+    color: #86efac;  /* green-300 */
+    padding: 0 1;
+    text-style: bold;
+    border-left: solid $primary-dark;
+}
+
+DiffView .diff-row {
+    height: 1;
+    layout: horizontal;
+    padding: 0 0;
+}
+
+DiffView .diff-row--missing {
+    background: #991b1b 30%;  /* red tint */
+}
+
+DiffView .diff-row--extra {
+    background: #166534 30%;  /* green tint */
+}
+
+DiffView .diff-row--changed {
+    background: #92400e 30%;  /* amber tint */
+}
+
+DiffView .diff-key {
+    width: 25;
+    padding: 0 1;
+    text-style: bold;
+}
+
+DiffView .diff-left {
+    width: 1fr;
+    padding: 0 1;
+    border-left: solid $primary-dark;
+}
+
+DiffView .diff-right {
+    width: 1fr;
+    padding: 0 1;
+    border-left: solid $primary-dark;
+}
+
+DiffView .diff-summary {
+    height: 1;
+    background: $overlay;
+    border-top: solid $primary-dark;
+    padding: 0 1;
+    color: $muted;
+}
+
+/* Status colours */
+.status-ok      { color: $accent; }
+.status-missing { color: $danger; }
+.status-extra   { color: $accent; }
+.status-changed { color: $warning; }
+.status-empty   { color: $muted; }
+
+/* ── Status bar ─────────────────────────────────────────── */
+
+StatusBar {
+    height: 1;
+    background: $primary-dark;
+    color: white;
+    padding: 0 1;
+    layout: horizontal;
+}
+
+StatusBar Label {
+    color: white;
+    margin-right: 2;
+}
+
+StatusBar .badge {
+    background: $primary;
+    padding: 0 1;
+    margin-right: 1;
+}
+
+StatusBar .badge--active {
+    background: $accent;
+    color: $surface;
+    text-style: bold;
+}

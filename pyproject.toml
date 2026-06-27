@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lazyenv"
+version = "0.1.0"
+description = "A beautiful TUI for managing .env files — like lazygit for environment variables"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "lazyenv contributors" }]
+keywords = ["dotenv", "environment", "tui", "cli", "developer-tools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Terminals",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "textual>=0.89.0",
+    "click>=8.1.0",
+    "pyperclip>=1.8.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-textual-snapshot>=0.5.0",
+    "mypy>=1.9.0",
+    "ruff>=0.4.0",
+    "hatch>=1.9.0",
+]
+
+[project.scripts]
+lazyenv = "lazyenv.__main__:main"
+le = "lazyenv.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/lazyenv/lazyenv"
+Documentation = "https://lazyenv.dev"
+Repository = "https://github.com/lazyenv/lazyenv"
+"Bug Tracker" = "https://github.com/lazyenv/lazyenv/issues"
+Changelog = "https://github.com/lazyenv/lazyenv/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lazyenv"]
+
+[tool.ruff]
+src = ["src"]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
