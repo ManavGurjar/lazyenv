@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from lazyenv.models import DiffEntry, EnvDiff, EnvEntry, EnvFile, EntryStatus
+from lazyenv.models import DiffEntry, EntryStatus, EnvDiff, EnvEntry, EnvFile
 
 
 def diff_files(left: EnvFile, right: EnvFile) -> EnvDiff:
@@ -29,10 +29,7 @@ def diff_files(left: EnvFile, right: EnvFile) -> EnvDiff:
         re_: EnvEntry | None = right_keys.get(key)
 
         if le is not None and re_ is not None:
-            if le.value == re_.value:
-                status = EntryStatus.OK
-            else:
-                status = EntryStatus.CHANGED
+            status = EntryStatus.OK if le.value == re_.value else EntryStatus.CHANGED
         elif le is not None:
             status = EntryStatus.MISSING   # in left (reference), absent in right
         else:

@@ -7,18 +7,18 @@ from pathlib import Path
 
 import click
 
+from lazyenv import __version__
+
 
 def _ensure_utf8() -> None:
     """Reconfigure stdout/stderr to UTF-8 on Windows when running interactively."""
     if sys.platform != "win32":
         return
-    import io
+    import io  # noqa: PLC0415
     if hasattr(sys.stdout, "buffer"):
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     if hasattr(sys.stderr, "buffer"):
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
-
-from lazyenv import __version__
 
 
 @click.group(invoke_without_command=True, context_settings={"help_option_names": ["-h", "--help"]})
@@ -117,9 +117,10 @@ def cmd_init(env_file: Path, output: Path, force: bool) -> None:
 # ── Non-TUI subcommands exposed as top-level options ──────────────────────────
 
 def _cmd_list(path: Path) -> None:
-    from lazyenv.parser import parse_directory
     from rich.console import Console
     from rich.table import Table
+
+    from lazyenv.parser import parse_directory
 
     files = parse_directory(path)
     if not files:
@@ -143,11 +144,12 @@ def _cmd_list(path: Path) -> None:
 
 
 def _cmd_diff(file1: Path, file2: Path) -> None:
-    from lazyenv.diff import diff_files
-    from lazyenv.parser import parse_file
     from rich.console import Console
     from rich.table import Table
+
+    from lazyenv.diff import diff_files
     from lazyenv.models import EntryStatus
+    from lazyenv.parser import parse_file
 
     left = parse_file(file1)
     right = parse_file(file2)
@@ -189,10 +191,11 @@ def _cmd_diff(file1: Path, file2: Path) -> None:
 
 
 def _cmd_validate(env_path: Path, example_path: Path) -> None:
-    from lazyenv.diff import validate_against_example
-    from lazyenv.parser import parse_file
     from rich.console import Console
+
+    from lazyenv.diff import validate_against_example
     from lazyenv.models import EntryStatus
+    from lazyenv.parser import parse_file
 
     env = parse_file(env_path)
     example = parse_file(example_path)

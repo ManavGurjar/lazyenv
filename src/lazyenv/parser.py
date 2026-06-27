@@ -135,10 +135,7 @@ def parse_file(path: Path) -> EnvFile:
 
         # export prefix (bash convention)
         stripped = line.lstrip()
-        if stripped.startswith("export "):
-            stripped = stripped[7:].lstrip()
-        else:
-            stripped = stripped
+        stripped = stripped[7:].lstrip() if stripped.startswith("export ") else stripped
 
         m = _KEY_VALUE_RE.match(stripped)
         if m:
