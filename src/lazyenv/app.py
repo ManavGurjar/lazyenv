@@ -50,7 +50,7 @@ class LazyEnv(App[None]):
 
     def __init__(self, root: Path) -> None:
         super().__init__()
-        self.root_path = root
+        self.root_path = root.resolve()
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)

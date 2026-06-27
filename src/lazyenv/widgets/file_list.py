@@ -37,11 +37,11 @@ class FileList(Widget):
         lv = self.query_one(ListView)
         lv.clear()
 
-        example_files = {f for f in files if "example" in f.name or "sample" in f.name}
-        env_only = [f for f in files if f not in example_files]
+        example_files = [f for f in files if "example" in f.name or "sample" in f.name]
+        example_paths = {f.path for f in example_files}
 
         def _item_class(f: EnvFile) -> str:
-            if f in example_files:
+            if f.path in example_paths:
                 return "file-item--example"
             # check for issues against example
             ex = next((e for e in example_files if e.path.parent == f.path.parent), None)
@@ -52,7 +52,10 @@ class FileList(Widget):
             return "file-item--ok"
 
         for f in files:
-            rel = f.path.relative_to(root) if root else f.path
+            try:
+                rel = f.path.relative_to(root) if root else f.path
+            except ValueError:
+                rel = f.path
             cls = _item_class(f)
             icon = "⚠ " if cls == "file-item--has-issues" else ("· " if cls == "file-item--example" else "✓ ")
             item = ListItem(Label(f"{icon}{rel}"), classes=cls)
