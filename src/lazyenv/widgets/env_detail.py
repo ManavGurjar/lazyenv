@@ -5,7 +5,6 @@ from __future__ import annotations
 from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.containers import ScrollableContainer, Vertical
-from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input, Label, Static
 
@@ -144,7 +143,7 @@ class EnvDetail(Widget):
             return rows.first().copyable_value
         return None
 
-    def focus(self) -> "EnvDetail":
+    def focus(self) -> EnvDetail:
         rows = self.query(EntryRow)
         if rows:
             rows.first().focus()

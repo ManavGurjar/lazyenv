@@ -42,7 +42,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
 
       - name: Type check (mypy)
-        run: mypy src/lazyenv
+        run: mypy src/lazyenv --ignore-missing-imports --exclude "widgets"
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
 
   build:

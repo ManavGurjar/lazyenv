@@ -7,7 +7,7 @@ from textual.containers import ScrollableContainer, Vertical
 from textual.widget import Widget
 from textual.widgets import Label, Static
 
-from lazyenv.models import DiffEntry, EnvDiff, EntryStatus
+from lazyenv.models import DiffEntry, EntryStatus, EnvDiff
 
 _STATUS_ICON = {
     EntryStatus.OK: "  ",

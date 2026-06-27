@@ -4,11 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
-from lazyenv.parser import parse_file, parse_directory
-from lazyenv.models import EnvFile
-
+from lazyenv.parser import parse_directory, parse_file
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

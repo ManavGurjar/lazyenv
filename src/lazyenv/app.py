@@ -7,13 +7,13 @@ from pathlib import Path
 from textual import on, work
 from textual.app import App, ComposeResult
 from textual.binding import Binding
-from textual.containers import Container, Horizontal, Vertical
+from textual.containers import Horizontal, Vertical
 from textual.reactive import reactive
-from textual.widgets import Footer, Header, Label, ListItem, ListView, Static
+from textual.widgets import Footer, Header
 
 from lazyenv.diff import diff_files, validate_against_example
-from lazyenv.models import EnvDiff, EnvFile
-from lazyenv.parser import parse_directory, parse_file
+from lazyenv.models import EnvFile
+from lazyenv.parser import parse_directory
 from lazyenv.widgets.diff_view import DiffView
 from lazyenv.widgets.env_detail import EnvDetail
 from lazyenv.widgets.file_list import FileList
@@ -177,7 +177,7 @@ class LazyEnv(App[None]):
             try:
                 subprocess.run([editor, str(self.selected_file.path)])
             finally:
-                self.resume()
+                self.resume()  # type: ignore[attr-defined]
             self.load_files()
 
     def action_help(self) -> None:

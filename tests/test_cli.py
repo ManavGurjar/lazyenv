@@ -4,11 +4,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
 from click.testing import CliRunner
 
 from lazyenv.__main__ import main
-
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

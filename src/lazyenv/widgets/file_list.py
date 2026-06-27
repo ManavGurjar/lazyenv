@@ -6,12 +6,11 @@ from pathlib import Path
 
 from textual.app import ComposeResult
 from textual.message import Message
-from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Label, ListItem, ListView
 
-from lazyenv.models import EnvFile
 from lazyenv.diff import validate_against_example
+from lazyenv.models import EnvFile
 
 
 class FileList(Widget):
@@ -71,6 +70,6 @@ class FileList(Widget):
         if env_file:
             self.post_message(self.FileSelected(env_file))
 
-    def focus(self) -> "FileList":
+    def focus(self) -> FileList:
         self.query_one(ListView).focus()
         return self
