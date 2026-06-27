@@ -4,7 +4,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/lazyenv.svg?color=violet)](https://pypi.org/project/lazyenv/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
-[![CI](https://github.com/lazyenv/lazyenv/actions/workflows/ci.yml/badge.svg)](https://github.com/lazyenv/lazyenv/actions)
+[![CI](https://github.com/ManavGurjar/lazyenv/actions/workflows/ci.yml/badge.svg)](https://github.com/ManavGurjar/lazyenv/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Downloads](https://img.shields.io/pypi/dm/lazyenv.svg)](https://pypi.org/project/lazyenv/)
 
@@ -79,7 +79,7 @@ uvx lazyenv
 
 ### Pre-built binaries
 
-Download from the [latest release](https://github.com/lazyenv/lazyenv/releases/latest) — no Python required.
+Download from the [latest release](https://github.com/ManavGurjar/lazyenv/releases/latest) — no Python required.
 
 ## Usage
 
@@ -170,6 +170,6 @@ MIT — see [LICENSE](LICENSE).
 
 <p align="center">
   Made with ♥ by the lazyenv community · 
-  <a href="https://github.com/lazyenv/lazyenv/issues">Report a bug</a> ·
-  <a href="https://github.com/lazyenv/lazyenv/discussions">Discussions</a>
+  <a href="https://github.com/ManavGurjar/lazyenv/issues">Report a bug</a> ·
+  <a href="https://github.com/ManavGurjar/lazyenv/discussions">Discussions</a>
 </p>
