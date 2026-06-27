@@ -20,7 +20,7 @@ It also has a non-interactive CLI mode that's useful in CI:
 Zero config — just pip install lazyenv and run lazyenv in any project.
 
 GitHub: https://github.com/ManavGurjar/lazyenv
-PyPI: https://pypi.org/project/lazyenv/
+PyPI: https://pypi.org/project/lazyenv-tui/
 
 Happy to hear feedback on the diff UX and what other features would be useful!
 ```
@@ -54,7 +54,7 @@ Built with Python + Textual (which is an amazing TUI framework —
 highly recommend checking it out).
 
 GitHub: https://github.com/ManavGurjar/lazyenv
-Install: pip install lazyenv (or uvx lazyenv to try without installing)
+Install: pip install lazyenv-tui (or uvx lazyenv-tui to try without installing)
 
 Would love feedback, especially on what's missing for your workflow!
 ```

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "lazyenv"
+name = "lazyenv-tui"
 version = "0.1.0"
 description = "A beautiful TUI for managing .env files — like lazygit for environment variables"
 readme = "README.md"
@@ -49,11 +49,11 @@ lazyenv = "lazyenv.__main__:main"
 le = "lazyenv.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/lazyenv/lazyenv"
-Documentation = "https://lazyenv.dev"
-Repository = "https://github.com/lazyenv/lazyenv"
-"Bug Tracker" = "https://github.com/lazyenv/lazyenv/issues"
-Changelog = "https://github.com/lazyenv/lazyenv/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/ManavGurjar/lazyenv"
+Documentation = "https://ManavGurjar.github.io/lazyenv"
+Repository = "https://github.com/ManavGurjar/lazyenv"
+"Bug Tracker" = "https://github.com/ManavGurjar/lazyenv/issues"
+Changelog = "https://github.com/ManavGurjar/lazyenv/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lazyenv"]

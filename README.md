@@ -2,11 +2,11 @@
 
 > A beautiful, lazygit-inspired TUI for managing `.env` files.
 
-[![PyPI version](https://img.shields.io/pypi/v/lazyenv.svg?color=violet)](https://pypi.org/project/lazyenv/)
+[![PyPI version](https://img.shields.io/pypi/v/lazyenv-tui.svg?color=violet)](https://pypi.org/project/lazyenv-tui/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
 [![CI](https://github.com/ManavGurjar/lazyenv/actions/workflows/ci.yml/badge.svg)](https://github.com/ManavGurjar/lazyenv/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Downloads](https://img.shields.io/pypi/dm/lazyenv.svg)](https://pypi.org/project/lazyenv/)
+[![Downloads](https://img.shields.io/pypi/dm/lazyenv-tui.svg)](https://pypi.org/project/lazyenv-tui/)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
@@ -62,19 +62,19 @@ lazyenv fixes all of this.
 
 ```bash
 # pip
-pip install lazyenv
+pip install lazyenv-tui
 
 # uv (recommended)
-uv tool install lazyenv
+uv tool install lazyenv-tui
 
 # pipx
-pipx install lazyenv
+pipx install lazyenv-tui
 ```
 
 ### One-liner (no install)
 
 ```bash
-uvx lazyenv
+uvx lazyenv-tui
 ```
 
 ### Pre-built binaries
